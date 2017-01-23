@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="4288cd8e29a5780976fa6e9428efdb88006e93b1">
+        sha1="1547d62c4d885ec9bc26dd858b49cb3a9ea5de89">
         <dex dex="D:\StarTalk\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_27def476401e1c92d823826f45e2a977c9279550\classes.dex" />
     </item>
     <item
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f84a404c162bd76392ca25a27e2ac23ec12ed3e0">
+        sha1="899f82442b2c47cf07692fd324a005e90f83fb76">
         <dex dex="D:\StarTalk\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_36b786b23b7942b0c4b4126d1efaa6f5a8b8503b\classes.dex" />
     </item>
     <item

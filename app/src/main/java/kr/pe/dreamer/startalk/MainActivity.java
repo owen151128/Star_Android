@@ -8,7 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+
+import kr.pe.dreamer.startalk.chattiong.ChattingFragment;
+import kr.pe.dreamer.startalk.friend.FriendFragment;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_chatting_nuumber"
+                android:id="@+id/tv_chatting_personnel"
                 android:layout_weight="1.0"
                 android:gravity="center" />
 

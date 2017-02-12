@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StarTalk</string>
+    <string name="profile_setting">프로필 관리</string>
 </resources>

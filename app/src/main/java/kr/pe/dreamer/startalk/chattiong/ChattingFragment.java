@@ -7,9 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import kr.pe.dreamer.startalk.R;
+import kr.pe.dreamer.startalk.util.ImageLoad;
 
 /**
  * Created by rhdlr on 2017-01-22.
@@ -60,6 +62,7 @@ public class ChattingFragment extends Fragment {
         private TextView tv_time;
         private TextView tv_personnel;
         private TextView tv_number;
+        private ImageView iv_room;
 
         public ChattingViewHolder(View view) {
             super(view);
@@ -68,6 +71,14 @@ public class ChattingFragment extends Fragment {
             tv_time = (TextView) view.findViewById(R.id.tv_chtting_time);
             tv_personnel = (TextView) view.findViewById(R.id.tv_chatting_personnel);
             tv_number = (TextView) view.findViewById(R.id.tv_message_number);
+            iv_room = (ImageView) view.findViewById(R.id.iv_room);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
 
         public void setItem(ChattingModel.Item item){
@@ -76,6 +87,7 @@ public class ChattingFragment extends Fragment {
             tv_time.setText(item.getTime());
             tv_personnel.setText(String.valueOf(item.getPersonnel()));
             tv_number.setText(String.valueOf(item.getMessageCount()));
+            ImageLoad.getInstance().circleLoad(getContext(),iv_room,R.drawable.thm_general_default_profile_image);
         }
     }
 }

@@ -19,6 +19,7 @@ public class FriendModel {
         for (int i = 0; i < 5; i++) {
             FriendModel.Item item = new FriendModel.Item();
             item.setImage("Friend Image : " + i);
+            item.setId("010-1234-456"+i);
             item.setName("Friend Name : " + i);
             item.setMessage("Friend Message : " + i);
 
@@ -42,8 +43,17 @@ public class FriendModel {
 
     public class Item {
         private String image;
+        private String id;
         private String name;
         private String message;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
 
         public String getImage() {
             return image;

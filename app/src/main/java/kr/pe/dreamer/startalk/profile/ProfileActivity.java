@@ -21,6 +21,7 @@ import kr.pe.dreamer.startalk.util.ImageLoad;
 
 public class ProfileActivity extends AppCompatActivity {
     private String id;
+    private String name;
 
     public static class Builder {
         private Intent intent;
@@ -44,21 +45,26 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    private void init(){
+        Intent intent = getIntent();
+
+        id = intent.getStringExtra("id");
+        name = intent.getStringExtra("name");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Intent intent = getIntent();
-
-        String name = intent.getStringExtra("name");
-        id = intent.getStringExtra("id");
+        init();
 
         GlobalConfig.getInstance().setId(this, "010-1234-4560");
 
         createCloseButton();
         createSettingButton();
         createPhotoButton();
+
         TextView tv_name = (TextView) findViewById(R.id.tv_profile_name);
         TextView tv_id = (TextView) findViewById(R.id.tv_profile_id);
         TextView tv_or = (TextView) findViewById(R.id.tv_profile_or);
@@ -107,7 +113,11 @@ public class ProfileActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new ProfileSettingActivity.Builder(ProfileActivity.this)
+                        .setId(id).setName(name)
+                        .build();
 
+                startActivity(intent);
             }
         });
     }

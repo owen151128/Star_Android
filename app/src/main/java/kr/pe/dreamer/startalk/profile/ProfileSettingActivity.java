@@ -159,6 +159,10 @@ public class ProfileSettingActivity extends AppCompatActivity {
             beginCrop(data.getData());
         } else if (requestCode == PICK_FROM_PROFILE) {
             ImageLoad.getInstance().load(this, fbtn_photo, data.getData());
+        } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Uri resultUri = result.getUri();
+            ImageLoad.getInstance().load(this, iv_background, resultUri);
         }
     }
 

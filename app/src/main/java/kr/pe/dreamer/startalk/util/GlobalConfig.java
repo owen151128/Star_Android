@@ -23,16 +23,36 @@ public class GlobalConfig {
         return instance;
     }
 
+    private SharedPreferences getSharedPreferences(Context context) {
+        return context.getSharedPreferences("Talk", Activity.MODE_PRIVATE);
+    }
+
+    private SharedPreferences.Editor getEditor(Context context) {
+        SharedPreferences pref = getSharedPreferences(context);
+        return pref.edit();
+    }
+
     private void putString(Context context, String key, String value) {
-        SharedPreferences pref = context.getSharedPreferences("Talk", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = getEditor(context);
         editor.putString(key, value);
         editor.commit();
     }
 
     private String getString(Context context, String key) {
-        SharedPreferences pref = context.getSharedPreferences("Talk", Activity.MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences(context);
         return pref.getString(key, null);
+    }
+
+
+    private void putBoolean(Context context, String key, boolean value) {
+        SharedPreferences.Editor editor = getEditor(context);
+        editor.putBoolean(key, value);
+        editor.commit();
+    }
+
+    private boolean getBoolean(Context context, String key) {
+        SharedPreferences pref = getSharedPreferences(context);
+        return pref.getBoolean(key, false);
     }
 
     public void setId(Context context, String value) {
@@ -41,5 +61,13 @@ public class GlobalConfig {
 
     public String getId(Context context) {
         return getString(context, "id");
+    }
+
+    public void setLogin(Context context, boolean value) {
+        putBoolean(context, "login", value);
+    }
+
+    public boolean isLogin(Context context) {
+        return getBoolean(context, "login");
     }
 }
